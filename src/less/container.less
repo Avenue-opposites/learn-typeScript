@@ -1,0 +1,77 @@
+@width:360px;
+@height:420px;
+@backColor:#bfc;
+@screenWH:304px;
+// 容器样式
+#container {
+    width: @width;
+    height: @height;
+    background-color:@backColor;
+    padding: 10px;
+    border: 10px solid black;
+    box-sizing: border-box;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap:wrap;
+    //屏幕样式
+    #screen {
+        @foodSize:10px;
+        position: relative;
+        box-sizing: border-box;
+        width: @screenWH;
+        height: @screenWH;
+        border: 2px solid black;
+        //蛇样式
+        #snake {
+            @snakeBody:10px;
+            @snakeColor:black;
+            &>span {
+                position: absolute;
+                left: 10px;
+                right: 10px;
+                display: inline-block;
+                width: @snakeBody;
+                height: @snakeBody;
+                background-color: @snakeColor;
+                border: 1px solid @backColor;
+            }
+            
+        }
+        #food {
+            position: absolute;
+            display: flex;
+            width:@foodSize;
+            height: @foodSize;
+            flex-flow: row wrap;
+            //设置主轴和副轴空白空间分配到元素之间
+            justify-content: space-between;
+            align-content: space-between;
+            // left: 40px;
+            // top: 38px;
+            &>div {
+                transform: rotate(45deg);
+                display: inline-block;
+                width: 4px;
+                height: 4px;
+                background-color: black;
+            }
+        }
+    }
+    //评分样式
+    #score-panel {
+        @fontFamily:'Courier New', Courier, monospace;
+        width: @screenWH;
+        font-size:20px;
+        font-weight: 700;
+        font-family:@fontFamily ;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        div {
+            height: 20px;
+        }
+    }
+}
