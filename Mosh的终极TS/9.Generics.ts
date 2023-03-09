@@ -52,6 +52,7 @@ function echo<T extends SN | User| Person | null>(value:T):T {
     return value;
 };
 echo<number>(1);
+// echo<boolean>(false);
 echo<User>({username:"pzj",password:"123456789"});
 echo<Person>(new Teacher("只","因"));
 
