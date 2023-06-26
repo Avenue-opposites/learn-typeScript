@@ -27,6 +27,10 @@ type FoodMap = {
     [key:string]:string;
 }
 
+//遍历元组元素类型
+type TupleType<T extends readonly any[]> = T[number];
+
+
 // function a(p:{name:string,age:number}) {
 //     if("name" in p) {
 

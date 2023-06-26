@@ -17,7 +17,7 @@ type ABType = GetType<string | number>;//"a" | "b"
 type GetSomeType<T extends string | number> = T[] extends string[] ? "a" : "b"; 
 type A_type = GetSomeType<string>;//"a"
 type B_type = GetSomeType<number>;//"b"
-type AB_type = GetSomeType<string | number>;//"a",因为T[]不是一个裸类型,所以只有一次判断
+type AB_type = GetSomeType<string | number>;//"b",因为T[]不是一个裸类型,所以只有一次判断
 
 //练习自己尝试Exclude(一般用于联合类型),Extract,NonNullable内置类型
 type Direction = "left" | "right" | "top" | "bottom";
